@@ -1,7 +1,7 @@
 package com.xy.hadoop.mapreduce;
 
-import com.xy.hadoop.pojo.MyMapper;
-import com.xy.hadoop.pojo.MyReducer;
+import com.xy.hadoop.pojo.WordCountMapper;
+import com.xy.hadoop.pojo.WordCountReducer;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -36,11 +36,11 @@ public class WordCount {
 
         FileOutputFormat.setOutputPath(job, outputPath);
 
-        job.setMapperClass(MyMapper.class);
+        job.setMapperClass(WordCountMapper.class);
         // 设置Map处理后，输出的数据类型，reducer用来进行反序列化
         job.setMapOutputKeyClass(Text.class);
         job.setMapOutputValueClass(IntWritable.class);
-        job.setReducerClass(MyReducer.class);
+        job.setReducerClass(WordCountReducer.class);
 
         job.waitForCompletion(true);
 

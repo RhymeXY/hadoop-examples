@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-public class MyMapper extends Mapper<Object, Text, Text, IntWritable> {
+public class WordCountMapper extends Mapper<Object, Text, Text, IntWritable> {
 
     private static final IntWritable one = new IntWritable(1);
 
