@@ -61,11 +61,11 @@ public class HDFSTests {
 
 
             // HDFS目录
-            Path file = new Path("/yg/haha/hello.txt");
+            Path file = new Path("/input/temperature/tq.txt");
             FSDataOutputStream output = fs.create(file);
 
             // 本地windows目录
-            InputStream input = new BufferedInputStream(new FileInputStream(new File("H:\\study\\code\\hadoop-examples\\file\\hello.txt")));
+            InputStream input = new BufferedInputStream(new FileInputStream(new File("H:\\study\\code\\hadoop-examples\\file\\tq")));
 
             IOUtils.copyBytes(input, output, conf, true);
 
